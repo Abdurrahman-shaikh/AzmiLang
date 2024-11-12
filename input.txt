@@ -1,0 +1,4 @@
+fun function() {
+    print "This is a string";
+    return 0;
+}

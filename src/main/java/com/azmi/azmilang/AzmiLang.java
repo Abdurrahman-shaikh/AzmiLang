@@ -33,12 +33,12 @@ public class AzmiLang {
   }
 
   private static void runPrompt() throws IOException {
-    InputStreamReader input = new InputStreamReader(System.in);
-    BufferedReader reader = new BufferedReader(input);
-    for (;;) {
-      System.out.print("> ");
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("To exit precc ctrl + d or enter /exit");
+    while (true) {
+      System.out.print("(azmi)-> ");
       String line = reader.readLine();
-      if (line == null)
+      if (line == null || line.trim().equalsIgnoreCase("/exit"))
         break;
       run(line);
       hadError = false;
